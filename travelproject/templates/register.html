@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+  .demo{border:4px solid gray;
+  padding:40px; background-color:pink;}
+  .how{color:red;background-color:yellow;}
+  </style>
+
+</head>
+<body>
+test register
+<center>
+    <div class="demo">
+<h1 class="how">Registration form</h1>
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="UserName"><br><br>
+    <input type="text" name="first_name" placeholder="enter your first name"><br><br>
+    <input type="text" name="last_name" placeholder="enter your last name"><br><br>
+    <input type="email" name="email" placeholder="enter your email address"><br><br>
+    <input type="password" name="password" placeholder="enter your password"><br><br>
+    <input type="password" name="password1" placeholder="enter your confirm password"><br><br>
+    <input type="submit">
+</form>
+    </div>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+
+</center>
+
+</body>
+</html>
